@@ -1,2 +1,2 @@
 //save board
-var [][];
+var data = [16][5];

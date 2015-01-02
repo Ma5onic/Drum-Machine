@@ -24,7 +24,7 @@ function playSound(buffer) {
     var source = audioContext.createBufferSource(); // creates a sound source
     source.buffer = buffer;
     var gainNode = audioContext.createGain();
-    gainNode.gain.value = volume;
+    gainNode.gain.value = 1;
     source.connect(gainNode);
     // tell the source which sound to play
     gainNode.connect(audioContext.destination); // connect the source to the audioContext's destination (the speakers)
