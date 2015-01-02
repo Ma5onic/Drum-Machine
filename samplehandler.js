@@ -1,5 +1,15 @@
 //buffer for click
-var clickBuffer = null;
+var sampBuffers = [];
+
+
+loadFiles("KIT1")
+function loadFiles(url){
+for(var i=0;i<5;i++){
+loadSound(url+"/"+i+".wav")
+}
+}
+
+
 
 function loadSound(url) {
     var request = new XMLHttpRequest();
@@ -9,7 +19,9 @@ function loadSound(url) {
     // Decode asynchronously
     request.onload = function() {
         audioContext.decodeAudioData(request.response, function(buffer) {
-            clickBuffer = buffer;
+            if (sampBuffers.length<6){
+            sampBuffers.push(buffer);
+            }
         });
     }
     request.send();

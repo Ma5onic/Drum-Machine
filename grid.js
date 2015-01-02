@@ -37,7 +37,7 @@
 		},
 
 		rectfill: function(context, x, y, w, h, resx, resy, color) {
-			context.rect(x,0,w,h);
+			context.rect(x,y,w,h);
 			context.fillStyle = color;
 
 			context.fill();

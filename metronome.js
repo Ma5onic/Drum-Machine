@@ -47,8 +47,17 @@ function scheduleNote( beatNumber, time ) {
     // create an oscillator
 
    console.log(beatNumber)
-   
-  loc(beatNumber);
+   if (data[beatNumber][4]==1){
+    playSound(sampBuffers[0])
+   }
+   if (data[beatNumber][3]==1){
+    playSound(sampBuffers[1])
+   }
+      if (data[beatNumber][2]==1){
+    playSound(sampBuffers[2])
+   }
+
+   loc(beatNumber);
 
 }
 

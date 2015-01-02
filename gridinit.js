@@ -1,8 +1,11 @@
 
 	var canvas = document.getElementById("canvas"),
 		context = canvas.getContext("2d"),
-		width = canvas.width = window.innerWidth,
-		height = canvas.height = window.innerHeight;
+		width = canvas.width = window.innerWidth-30,
+		height = canvas.height = window.innerHeight-30;
+
+	var controls = document.getElementById("controls"),
+		controlscontext = controls.getContext("2d");
 
 
 	var w = width ,
@@ -35,7 +38,8 @@ function reset_board(w,h){
 function loc(i) {
 	
 		reset_board(width,height);
-		grid.rectfill(context, (width/16)*i, y, width/16, height, "rgb(0,0,0)");
+		drawpattern();
+		grid.rectfill(context, (width/16)*i, y, width/16, height,0,0, "rgba(0,0,0,0.1)");
 		}
 
 

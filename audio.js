@@ -108,17 +108,6 @@ function updatePitch(time) {
 
 
 
-//get user input
-navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
-navigator.getUserMedia({
-        audio: true
-    }, gotStream, // errorCallback
-    function(err) {
-        console.log("The following error occured: " + err);
-    });
-
-
-
 // when the javascript node is called
 // we use information from the analyzer node
 // to draw the volume
