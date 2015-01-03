@@ -19,5 +19,17 @@ $('#canvas').mousedown(function (e) {
 });
 
 $('#controls').mousedown(function (e) {
+
 	play();
+	if (isPlaying){
+	controlscontext.clearRect(0,0,controls.width,controls.height)
+	controlscontext.fillStyle=("rgba(0,0,0,1)")
+	controlscontext.fillRect(0,0,controls.width,controls.height)
+	}
+	else
+	{
+	controlscontext.clearRect(0,0,controls.width,controls.height)
+	controlscontext.fillStyle=("rgba(0,0,0,0.5)")
+	controlscontext.fillRect(0,0,controls.width,controls.height)		
+	};
 });

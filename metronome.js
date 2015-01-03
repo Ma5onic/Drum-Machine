@@ -57,6 +57,15 @@ function scheduleNote( beatNumber, time ) {
     playSound(sampBuffers[2])
    }
 
+         if (data[beatNumber][1]==1){
+    playSound(sampBuffers[3])
+   }
+
+         if (data[beatNumber][0]==1){
+    playSound(sampBuffers[4])
+   }
+
+
    loc(beatNumber);
 
 }
