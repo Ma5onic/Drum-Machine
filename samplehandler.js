@@ -32,7 +32,7 @@ function loadSound(url) {
 /** playSound -
  self explanitory 
  */
-function playSound(buffer) {
+function playSound(buffer, time, notelength) {
     var source = audioContext.createBufferSource(); // creates a sound source
     source.buffer = buffer;
     var gainNode = audioContext.createGain();
@@ -40,6 +40,7 @@ function playSound(buffer) {
     source.connect(gainNode);
     // tell the source which sound to play
     gainNode.connect(audioContext.destination); // connect the source to the audioContext's destination (the speakers)
-    source.start(0); // play the source now
+    source.start(time); // play the source now
+    source.stop(time+notelength)
     // note: on older systems, may have to use deprecated noteOn(time);
 }

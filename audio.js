@@ -6,8 +6,6 @@ function init(yinSampleRate, yinBufferSize){
 	bufferSize = yinBufferSize;
 	sampleRate = yinSampleRate;
 	halfBufferSize = bufferSize / 2;
-	threshold = 0.10;
-	probability = 10.0;
 	//initialize array and set it to zero
 	yinBuffer = [halfBufferSize];
 	for(i = 0; i < halfBufferSize; i++){
