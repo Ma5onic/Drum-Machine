@@ -1,8 +1,8 @@
 
 	var canvas = document.getElementById("canvas"),
 		context = canvas.getContext("2d"),
-		width = canvas.width = window.innerWidth-30,
-		height = canvas.height = window.innerHeight-30;
+		width = canvas.width =$("#main_machine").width(),
+		height = canvas.height =$("#main_machine").height();
 
 	var controls = document.getElementById("controls"),
 		controlscontext = controls.getContext("2d");

@@ -1,8 +1,8 @@
 //mousedown/up when reached end
 
 $('#canvas').mousedown(function (e) {
-    var clickedX = e.pageX 
-    var clickedY = e.pageY 
+    var clickedX = e.pageX - $("#canvas").offset().left
+    var clickedY = e.pageY - $("#canvas").offset().top
     
     intClickX = parseInt(clickedX/width*16)
     intClickY = parseInt(clickedY/height*5)
