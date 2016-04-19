@@ -18,6 +18,34 @@ $('#canvas').mousedown(function (e) {
     
 });
 
+var sampBuffers = [];
+
+loadFiles("KIT1")
+function loadFiles(url){
+for(var i=4;i>=0;i--){
+	switch (i){
+		case 0:
+		loadSound(url+"/tom/0.wav")
+		case 1:
+		loadSound(url+"/click/0.wav")
+		case 2:
+		loadSound(url+"/hat/0.wav")
+		case 3:
+		loadSound(url+"/snare/0.wav")
+		case 4:
+		loadSound(url+"/kick/0.wav")
+	}
+}
+}
+
+
+function changeFunc() {
+var selectBox = document.getElementById("s1");
+var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+console.log(selectedValue);
+}
+
+
 $('#controls').mousedown(function (e) {
 
 	play();

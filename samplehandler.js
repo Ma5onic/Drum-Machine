@@ -1,13 +1,13 @@
 //buffer for click
-var sampBuffers = [];
+// var sampBuffers = [];
 
+// loadFiles("KIT1")
+// function loadFiles(url){
+// for(var i=0;i<5;i++){
+// loadSound(url+"/"+i+".wav")
+// }
+// }
 
-loadFiles("KIT1")
-function loadFiles(url){
-for(var i=0;i<5;i++){
-loadSound(url+"/"+i+".wav")
-}
-}
 
 
 
