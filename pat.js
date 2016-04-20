@@ -10,7 +10,7 @@ function drawpattern(){
 		for (var j=0;j<5;j++){
 			if (data[i][j]==1)
 			{
-		 		grid.rectfill(context, (width/16)*i, ((height/5)*j), width/16, (height/5), 0,0,"rgb(0,0,0)");
+		 		grid.rectfill(context, (width/16)*i, ((height/5)*j), width/16, (height/5), 0,0,"rgba(0,0,"+(j*5)+",0.3)");
 			}
 		}
 	}

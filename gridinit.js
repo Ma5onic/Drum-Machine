@@ -38,9 +38,9 @@ function reset_board(w,h){
 function loc(i) {
 	
 		reset_board(width,height);
-		drawpattern();
+		// drawpattern();
 		grid.rectfill(context, (width/16)*i, y, width/16, height,0,0, "rgba(0,0,0,0.1)");
-		}
+		drawpattern();}
 
 
 

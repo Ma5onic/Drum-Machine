@@ -11,20 +11,35 @@
 
 
 
-function loadSound(url) {
+function loadSound(url, i) {
     var request = new XMLHttpRequest();
     request.open('GET', url, true);
     request.responseType = 'arraybuffer';
 
     // Decode asynchronously
-    request.onload = function() {
-        audioContext.decodeAudioData(request.response, function(buffer) {
-            if (sampBuffers.length<6){
-            sampBuffers.push(buffer);
-            }
-        });
+    console.log(i);
+    if (i==undefined){
+        console.log('waza')
+        request.onload = function() {
+            audioContext.decodeAudioData(request.response, function(buffer) {
+                if (sampBuffers.length<6){
+                sampBuffers.push(buffer);
+                }
+            });
+        }
+        request.send();
     }
-    request.send();
+    else
+    {
+        console.log(i);
+        console.log(sampBuffers);
+        request.onload = function() {
+            audioContext.decodeAudioData(request.response, function(buffer) {
+               sampBuffers[4-i] = buffer
+            });
+        }
+        request.send();
+    }
 }
 
 
