@@ -16,8 +16,6 @@ function loadSound(url, i) {
     request.open('GET', url, true);
     request.responseType = 'arraybuffer';
 
-    // Decode asynchronously
-    console.log(i);
     if (i==undefined){
         console.log('waza')
         request.onload = function() {
@@ -31,8 +29,6 @@ function loadSound(url, i) {
     }
     else
     {
-        console.log(i);
-        console.log(sampBuffers);
         request.onload = function() {
             audioContext.decodeAudioData(request.response, function(buffer) {
                sampBuffers[4-i] = buffer
@@ -42,7 +38,7 @@ function loadSound(url, i) {
     }
 }
 
-
+playback = parseFloat($("#speed").val());
 
 /** playSound -
  self explanitory 
@@ -54,8 +50,10 @@ function playSound(buffer, time, notelength) {
     gainNode.gain.value = 1;
     source.connect(gainNode);
     // tell the source which sound to play
-    gainNode.connect(audioContext.destination); // connect the source to the audioContext's destination (the speakers)
+    gainNode.connect(audioContext.destination);
+    source.playbackRate.value = playback // connect the source to the audioContext's destination (the speakers)
     source.start(time); // play the source now
     source.stop(time+notelength)
+
     // note: on older systems, may have to use deprecated noteOn(time);
 }

@@ -11,9 +11,9 @@
 			display: block;
 		}
 		#main_machine{
-			float: right;
+			float: left;
 			border: 1px solid;
-			width:80%;
+			width:70%;
 			height:200px;
 		}
 		#canvas{
@@ -22,7 +22,7 @@
 		}
 		#controls{
 			width:100%;
-			margin: 5%;
+			/*margin: 5%;*/
 		}
 		#samples{
 			height:200px;
@@ -33,12 +33,22 @@
 
 		}
 		#container{
-			width:80%;
+			border:5px solid;
+			margin:100px;
+			/*width:80%;*/
 		}
 
 		.sample{
 			height: 20%;
 			/*border:1px solid;*/
+		}
+
+		#speed{
+			border:1px solid;
+			/*height:100px;*/
+			/*float: left;*/
+		   transform: rotate(270deg) translate(-100px);
+		   /*transform:translate(0px,100px);*/
 		}
 
 	</style>
@@ -74,12 +84,17 @@
 				</select>
 			</div>
 		</div>
+		
 
 	    <div id="main_machine">
 
 	       <canvas id="canvas"/>
 	        
 	    </div>
+
+	    <input id="speed" type ="range" min ="0.1" max="3.0" step ="0.1"/>
+
+
 	    <div id="c">
 	  		<canvas id="controls"/>
 	  	</div>

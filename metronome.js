@@ -46,7 +46,7 @@ function scheduleNote( beatNumber, time ) {
 
     // create an oscillator
 
-   console.log(time)
+   // console.log(time)
    if (data[beatNumber][4]==1){
     playSound(sampBuffers[0], time, noteLength)
    }
@@ -77,8 +77,6 @@ function scheduleNote( beatNumber, time ) {
 function scheduler() {
     // while there are notes that will need to play before the next interval, 
     // schedule them and advance the pointer.
-    console.log(nextNoteTime)
-    console.log(audioContext.currentTime+scheduleAheadTime)
     while (nextNoteTime < audioContext.currentTime + scheduleAheadTime ) {
       
         scheduleNote( current16thNote, nextNoteTime );

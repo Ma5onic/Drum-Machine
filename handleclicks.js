@@ -131,3 +131,8 @@ $('#controls').mousedown(function (e) {
 	controlscontext.fillRect(0,0,controls.width,controls.height)		
 	};
 });
+
+//update jquery for new sliders
+$("#speed").change(function(e){
+	playback = parseFloat($("#speed").val());
+})
