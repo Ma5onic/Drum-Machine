@@ -1,6 +1,22 @@
 //mousedown/up when reached end
 
 $('#canvas').mousedown(function (e) {
+	clickeroo(e);
+ 	$('#canvas').mousemove(dragaroo);
+});
+
+$('#canvas').mouseup(function (e) {
+ 	$('#canvas').unbind('mousemove', dragaroo);
+});
+
+
+
+
+
+
+
+
+function clickeroo(e){
     var clickedX = e.pageX - $("#canvas").offset().left
     var clickedY = e.pageY - $("#canvas").offset().top
     
@@ -13,12 +29,22 @@ $('#canvas').mousedown(function (e) {
 	{data[intClickX][intClickY]=0}	
 
 	reset_board(width,height);
-    drawpattern();
-    // reset_board(width,height);
-    // grid.rectfill(context, (width/16)*intClickX, ((height/5)*intClickY), width/16, (height/5), 0,0,"rgb(0,0,0)");
-    
-});
+    drawpattern();  
+}
 
+function dragaroo(e){
+    var clickedX = e.pageX - $("#canvas").offset().left
+    var clickedY = e.pageY - $("#canvas").offset().top
+    
+    intClickX = parseInt(clickedX/width*16)
+    intClickY = parseInt(clickedY/height*5)
+    if (data[intClickX][intClickY]==0){
+    data[intClickX][intClickY]=1
+	}
+
+	reset_board(width,height);
+    drawpattern();  
+}
 function createOptions(selector)
 {
     var i;

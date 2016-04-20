@@ -37,11 +37,15 @@
 		},
 
 		rectfill: function(context, x, y, w, h, resx, resy, color) {
-			context.rect(x,y,w,h);
+			context.beginPath();
+			// context.strokeStyle = color;
 			context.fillStyle = color;
-
+			context.rect(x,y,w,h);
 			context.fill();
+			// context.stroke();
 			//context.fill();
+			// ctx.beginPath
+			
 			this._postDraw(context);
 		},
 

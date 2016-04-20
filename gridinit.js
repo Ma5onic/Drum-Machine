@@ -30,7 +30,7 @@
 
 function reset_board(w,h){
 		context.clearRect(0,0,w,h)
-			grid.rect(context, x, y, w, h, width/16, height/5, "rgb(0,0,0)");
+			grid.rect(context, x, y, w, h, width/16, height/5, "rgba(0,0,0,1)");
 			
 		}
 
@@ -39,7 +39,7 @@ function loc(i) {
 	
 		reset_board(width,height);
 		// drawpattern();
-		grid.rectfill(context, (width/16)*i, y, width/16, height,0,0, "rgba(0,0,0,0.1)");
+		grid.rectfill(context, (width/16)*i, y, width/16, height,0,0, "rgba(0,0,0,0.3)");
 		drawpattern();}
 
 
