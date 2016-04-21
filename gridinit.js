@@ -54,7 +54,7 @@ function loc(i) {
 	}
 
 	function rect() {
-		grid.rect(context, 0, 0, width, height, 50, 25);
+		grid.rect(g, 0, 0, width, height, 50, 25);
 	}
 
 
