@@ -127,7 +127,7 @@ $('#controls').mousedown(function (e) {
 	else
 	{
 	controlscontext.clearRect(0,0,controls.width,controls.height)
-	controlscontext.fillStyle=("rgba(0,0,0,0.5)")
+	controlscontext.fillStyle=("rgba(0,0,0,0.3)")
 	controlscontext.fillRect(0,0,controls.width,controls.height)		
 	};
 });
@@ -135,4 +135,7 @@ $('#controls').mousedown(function (e) {
 //update jquery for new sliders
 $("#speed").change(function(e){
 	playback = parseFloat($("#speed").val());
+})
+$("#gain").change(function(e){
+	gain = parseFloat($("#gain").val());
 })

@@ -39,6 +39,7 @@ function loadSound(url, i) {
 }
 
 playback = parseFloat($("#speed").val());
+gain = parseFloat($("#gain").val());
 
 /** playSound -
  self explanitory 
@@ -47,7 +48,7 @@ function playSound(buffer, time, notelength) {
     var source = audioContext.createBufferSource(); // creates a sound source
     source.buffer = buffer;
     var gainNode = audioContext.createGain();
-    gainNode.gain.value = 1;
+    gainNode.gain.value = gain;
     source.connect(gainNode);
     // tell the source which sound to play
     gainNode.connect(audioContext.destination);
